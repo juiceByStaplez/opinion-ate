@@ -9,6 +9,11 @@ const api = {
   loadRestaurants() {
     return client.get(baseURL + '/restaurants').then(response => response.data);
   },
+  createRestaurant(name) {
+    return client
+      .post(baseURL + '/restaurants', {name})
+      .then(response => response.data);
+  },
 };
 
 export default api;
